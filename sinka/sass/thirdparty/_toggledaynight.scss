@@ -1,0 +1,170 @@
+// Switch dia e noite para alternar tema
+// Por Jason Tyler (https://codepen.io/jasontyler)
+
+/*
+F5EB42 - sun inner
+E4C74D - sun outer
+FFFFFF - cloud inner
+D4D4D2 - cloud outer
+81C0D5 - parent outer
+C0E6F6 - parent inner
+FFFDF2 - moon inner
+DEE1C5 - moon outer
+FCFCFC - stars
+*/
+
+/////////////////////////////////////////////////
+// Mixins
+/////////////////////////////////////////////////
+@mixin crater($top, $left, $size) {
+  content: '';
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $size;
+  height: $size;
+  background-color: #EFEEDA;
+  border-radius: 100%;
+  border: 0.25em solid #DEE1C5;
+}
+
+@mixin cloudBubble($top, $right, $width, $height, $deg) {
+  content: '';
+  display: block;
+  position: relative;
+  top: $top;
+  right: $right;
+  width: $width;
+  height: $height;
+  border: 0.5em solid #D4D4D2;
+  border-radius: 100%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotateZ($deg);
+  background-color: #fff;
+}
+
+/////////////////////////////////////////////////
+// Day State
+/////////////////////////////////////////////////
+#daynight-toggle {
+  position: relative;
+  display: inline-block;
+  width: 6.25em;
+  margin-left: 6.25em;
+  padding: 0.25em;  
+  border-radius: 2.5em;
+}
+
+#daynight-toggle:before,
+#daynight-toggle:after {
+  content: '';
+  display: table;
+}
+
+#daynight-toggle:after {
+  clear: both;
+}
+
+.toggle-bg {
+  position: absolute;
+  top: -0.25em;
+  left: -0.25em;
+  width: 100%;  
+  height: 100%;
+  background-color: #C0E6F6;
+  border-radius: 2.5em;
+  border: 0.25em solid #81C0D5;
+  transition: all .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.daynight-toggle-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  
+  height: 100%;
+  border: 0.0625em solid red;
+  border-radius: 2.5em;
+  z-index: 2;
+  opacity: 0;
+}
+
+.daynight-toggle-switch {
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
+  margin-left: 3.125em;
+  background-color: #F5EB42;
+  border: 0.25em solid #E4C74D;
+  border-radius: 50%;
+  transition: all .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.toggle-switch-figure {  
+  position: absolute;
+  bottom: -0.875em;
+  left: -3.125em;
+  display: block;
+  width: 5em;
+  height: 1.875em;
+  border: 0.5em solid #D4D4D2;
+  border-radius: 1.25em;  
+  background-color: #fff;
+  transform: scale(0.4);
+  transition: all .12s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  &:after {
+    @include cloudBubble(-4.0625em, -2.625em, 0.9375em, 0.9375em, 70deg);
+  }
+  &:before {
+    @include cloudBubble(-1.5625em, -0.625em, 1.875em, 1.875em, 30deg);
+  }
+}
+
+.toggle-switch-figureAlt {
+  @include crater(0.3125em, 0.125em, 0.125em);
+  
+  box-shadow: 
+    2.625em -0.4375em 0 -0.1875em #FCFCFC,
+    4.6875em -0.625em 0 -0.1875em #FCFCFC,
+    3.375em 0.25em 0 -0.25em #FCFCFC,
+    5.1875em 0.4375em 0 -0.125em #FCFCFC,
+    3.9375em 1.125em 0 -0.25em #FCFCFC,
+    2.75em 1.75em 0 -0.125em #FCFCFC,
+    4.875em 1.4375em 0 -0.1875em #FCFCFC;
+  
+  transition: all .12s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  transform: scale(0);
+}
+
+.toggle-switch-figureAlt:before {
+  @include crater(-0.375em, 1.125em, 0.4375em);
+}
+
+.toggle-switch-figureAlt:after {
+  @include crater(1.1875em, 0.9375em, 0.125em);
+}
+
+/////////////////////////////////////////////////
+// Night State
+/////////////////////////////////////////////////
+.daynight-toggle-input:checked ~ .daynight-toggle-switch {
+  margin-left: 0;
+  border-color: #DEE1C5;
+  background-color: #FFFDF2;
+}
+
+.daynight-toggle-input:checked ~ .toggle-bg {
+  background-color: #484848;
+  border-color: #202020;
+}
+
+.daynight-toggle-input:checked ~ .daynight-toggle-switch .toggle-switch-figure {
+  margin-left: 2.5em;
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.daynight-toggle-input:checked ~ .daynight-toggle-switch .toggle-switch-figureAlt {
+  transform: scale(0.9);
+}

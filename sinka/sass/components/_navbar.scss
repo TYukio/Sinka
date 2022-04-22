@@ -1,0 +1,133 @@
+// Cabeçalho
+$nav-height: 5vh;
+
+nav
+{
+    position: sticky;
+    top: 0;
+    text-align: center;
+    min-height: $nav-height;
+
+    color: var(--color-secondary-fore);
+    background-color: var(--color-secondary);
+    
+    border-bottom: 0.25em solid var(--color-primary);
+    font-weight: 600;
+
+    .logo
+    {
+        position: absolute;
+        height: 4vh;
+        left: 0.5em;
+        top:  $nav-height / 2 - 2vh;
+    }
+
+    a
+    {
+        display: inline-block;
+        padding: 1.4vh 2.5em;      
+        background-color: inherit;
+        cursor: pointer;
+        
+        &:hover
+        {
+            transition: 0.35s all ease;
+            color: var(--color-primary-fore);
+            background-color: var(--color-primary);
+        }
+    }
+
+    #daynight-toggle
+    {
+        position: absolute;
+        margin-right: 2em;
+        
+        right: 0;
+
+        cursor: pointer;
+        *
+        {
+            cursor: pointer;
+        }
+
+        
+        font-size: 0.75vh;
+        top: $nav-height / 2 - 1.15vh;
+    }
+
+    #hamburger-menu
+    {
+        display: none;
+    }
+
+    @media screen and (max-aspect-ratio: 11/10) 
+    {
+        a
+        {
+            display: none;
+        }
+
+        &.dropped
+        {
+
+            a
+            {
+                display: block;
+            }
+            &:first-child
+            {
+                padding-top: $nav-height;
+            }
+            &:first-child:before
+            {
+                content: "";
+                display: block;
+                border-bottom: 0.25em solid var(--color-primary);
+            }
+
+            a:after
+            {
+                padding-top: 0.5em;
+                content: "";
+                display: block;
+                border-bottom: 0.25em solid var(--color-primary);
+                margin: 0 auto;
+                width: 30%;
+                transition: 0.3s;
+            }
+
+            a:hover
+            {
+                &:after
+                {
+                    border-bottom: 0.25em solid var(--color-primary-fore);
+                    transition: 0.3s;
+                    width: 50%;
+                }
+                
+            }
+
+        }
+
+        #hamburger-menu
+        {
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            font-size: 4vh;
+            top: $nav-height / 2 - 2vh;
+            display: block;
+
+            &:hover
+            {
+                color: var(--color-primary);
+            }
+        }
+
+        #daynight-toggle
+        {
+            right: 4vh;
+        }
+    }
+
+}

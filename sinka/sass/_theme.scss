@@ -1,0 +1,28 @@
+// Temas
+
+body
+{
+	--color-foreground-light: #{#F8F8F8};
+	--color-foreground-dark: #{#0E0E0E};
+	
+	// Tema claro, padrão
+	&[theme="light"], &:not([theme])
+	{
+		--color-primary: #{#E0F80E}; --color-primary-fore: #{var(--color-foreground-dark)};
+		--color-secondary: #{#124559}; --color-secondary-fore: #{var(--color-foreground-light)};
+		--color-tertiary: #{#01161E}; --color-tertiary-fore: #{var(--color-foreground-light)};
+		--color-background: #{#E7E7E7}; --color-background-fore: #{var(--color-foreground-dark)};
+	}
+
+	// Tema escuro
+	&[theme="dark"]
+	{
+		--color-primary: #{#E0F80E}; --color-primary-fore: #{var(--color-foreground-dark)};
+		--color-secondary: #{#6C0097}; --color-secondary-fore: #{var(--color-foreground-light)};
+		--color-tertiary: #{#5B5A55}; --color-tertiary-fore: #{var(--color-foreground-light)};
+		--color-background: #{#0C120C}; --color-background-fore: #{var(--color-foreground-light)};
+	}
+
+	// Fontes
+	--font-main: #{Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans};
+}

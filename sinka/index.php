@@ -2,14 +2,11 @@
 <html>
 
     <head>
-        <link rel="stylesheet" href="/css/styles.css">
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/components/head.html";?>
     </head>
 
-    <body class="theme-light">
-
-        <h1>My First Heading</h1>
-
-        <p>My first paragraph.</p>
-
+    <body theme="light">
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/components/navbar.php";?>
+        <h1 style="text-align: center;">Olá mundo</h1>
     </body>
 </html>
