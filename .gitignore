@@ -1,2 +1,3 @@
 # Ignorar CSS compilado
 *.css
+*.map
