@@ -12,8 +12,6 @@
 </div>
 
 <body theme = "dark">
-    
-
     <section class="banner__index"></section>
     <div class="nav__index">
         <div id="vanta-canvas"></div>

@@ -1,3 +1,6 @@
 # Ignorar CSS compilado
 *.css
 *.map
+
+# Ignorar credenciais do BD
+credentials.ini

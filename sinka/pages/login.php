@@ -6,14 +6,19 @@
 </head>
 <body theme="light" class="authpage">
     <img src="/img/sinka.svg" height="80" width="100%"/>  
-    <div id="login-container1">
+
+    <?php
+    if (isset($_GET["msg"])) echo '<h3 id="notification-getter">'. $_GET["msg"] ."</h3>";
+    ?>
+
+    <div id="login-container">
         
         <h1>Login</h1>
-        <form action="">
+        <form action="/pages/action/signin.php" method="post">
             <label id="emailform" for="email"></label>
             <input type="email" name="email" id="email" placeholder="Digite seu email" autocomplete="off">
             <label id="passwordform" for="password"></label>
-            <input type="password" name="password" id="password" placeholder="Digite sua senha" >
+            <input type="password" name="pass" id="password" placeholder="Digite sua senha" >
             
             <a href="https://www.youtube.com/watch?v=ZvmdK1vHDiY" class="forget">Esqueceu sua senha?</a>
             <input type="submit" value="Login">

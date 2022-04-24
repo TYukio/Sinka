@@ -9,19 +9,37 @@
         color: var(--color-tertiary-fore)
     }
 }
-#login-container1{
-    
-    box-sizing: border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    border: none;
-    *
-    {
-        color: var(--color-tertiary-fore)
-    }
+
+@keyframes blink 
+{
+    from { border: 3px solid #732299; }
+    to {  border: 3px solid #adadad; }
 }
 
+@keyframes fadeaway 
+{
+    0% { opacity: 1; }
+    75% {  opacity: 1; }
+    99% {  position: relative; }
+    100% {  opacity: 0; display: none; position: absolute; }
+}
 
+#notification-getter
+{
+    margin: 0 auto;
+    padding: 2vh 2vh;
+
+    margin-top: 6vh;
+    margin-bottom: -7vh;
+
+    text-align: center;
+    width: 20%;
+    color: #ffffff;
+    background-color: #d4d4d477;
+    border: 3px solid #732299;
+    font-size: 2vh;
+    animation: blink 0.5s alternate 8, fadeaway 8s forwards;
+}
 
 body.authpage
 {
