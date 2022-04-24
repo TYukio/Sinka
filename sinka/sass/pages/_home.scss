@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family:'Open Sans', sans-serif ;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    list-style-position: inline-block;
+    
+}
+header .logo__index{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+header .toggle{
+    position: relative;
+    width: 36px;
+    height: 28px;
+    cursor:pointer
+}
+
+li{
+    display: inline-block;
+    text-decoration: none;
+    list-style: none;
+    padding: 1.1rem;
+    
+}
+
+.navbar__itens{
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: aliceblue;
+    padding: 10px;
+}
+.navbar__itens:hover{
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: var(--color-secondary);
+    transition: background-color 0.5s ease-in-out 
+}
+.active{
+    background-color: white;
+    border-radius: 10px;
+    color: var(--color-secondary);
+}
+.active:hover{
+    background-color: rgba(240, 248, 255, 0.979);
+}
+
+
+
+.slogan{
+    color: aliceblue;
+    display: flex;
+    width: 100%;
+    height: 30vh;
+    top: 30vh;
+    justify-content: center;
+    font-size: 1.5rem;
+
+}
+.autotype__slogan{
+    height: 0vh;
+    display: flex;
+    justify-content: center;
+    top: 6vh;
+    color: aliceblue;
+    width: 100%;
+    margin: 0 auto !important;
+    font-size: 1.2rem;
+    
+}
+span{
+    color: var(--color-primary);
+}
+.banner__index{
+    position: relative;
+    width: 100%;
+    height: 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+#vanta-canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+}
+body{
+    background-color: black;
+}
