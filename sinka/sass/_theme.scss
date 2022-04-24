@@ -19,10 +19,10 @@ body
 	{
 		--color-primary: #{#E0F80E}; --color-primary-fore: #{var(--color-foreground-dark)};
 		--color-secondary: #{#6C0097}; --color-secondary-fore: #{var(--color-foreground-light)};
-		--color-tertiary: #{#5B5A55}; --color-tertiary-fore: #{var(--color-foreground-light)};
+		--color-tertiary: #{#3a3937}; --color-tertiary-fore: #{var(--color-foreground-light)};
 		--color-background: #{#0C120C}; --color-background-fore: #{var(--color-foreground-light)};
 	}
 
 	// Fontes
-	--font-main: #{Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans};
+	--font-main: #{Open Sans, Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans};
 }

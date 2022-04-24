@@ -10,4 +10,11 @@ body
 
     color: var(--color-background-fore);
     background-color: var(--color-background);
+
+    .page
+    {
+        position: relative;
+        min-height: 90vh;
+        padding-bottom: 10vh;
+    }
 }
