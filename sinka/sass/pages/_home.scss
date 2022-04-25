@@ -7,6 +7,12 @@
     position: relative;
     font-family:'Open Sans', sans-serif ;
 }
+body{
+    background-color: var(--color-background);
+    overflow-x: hidden ;
+}
+
+/* navbar and Banner */
 header{
     position: absolute;
     top: 0;
@@ -17,7 +23,7 @@ header{
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    list-style-position: inline-block;
+    
     
 }
 header .logo__index{
@@ -44,7 +50,9 @@ li{
     
 }
 
+
 .navbar__itens{
+    width: 100%;
     text-decoration: none;
     font-size: 1.1rem;
     color: aliceblue;
@@ -81,7 +89,7 @@ li{
     height: 0vh;
     display: flex;
     justify-content: center;
-    top: 6vh;
+    top: 8vh;
     color: aliceblue;
     width: 100%;
     margin: 0 auto !important;
@@ -107,6 +115,94 @@ span{
     width: 100%;
     height: 60vh;
 }
-body{
-    background-color: black;
+
+
+/* responsive navbar */
+.mobile-nav-toggle{
+    display: none;
+}
+
+@media screen and (max-aspect-ratio: 11/10)  {
+    .navbar__org{
+        
+
+
+        position: fixed;
+        inset: 0 0 0 0%;
+        
+        z-index: 1000;
+        padding: 0vh 2em;
+        backdrop-filter: blur(1rem);
+        background:rgba(174, 0, 255, 0.253);
+        
+        transform: translateX(100%);
+        transition: transform 350ms ease-in-out;
+        
+
+    }
+    .mobile-nav-toggle[aria-expanded="true"]{
+        background: url('/img/close.svg');
+    }
+    .navbar__org[data-visible="true"]{
+        transform: translateX(0%);
+    }
+    .mobile-nav-toggle{
+        display: block;
+        position: absolute;
+        color: aliceblue;
+        z-index: 9999;
+        background: url('/img/menu.svg');
+        background-repeat: no-repeat ;
+        width: 3rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
+    li{
+        display: block;
+        gap: 10em;
+        padding-top: 5rem;
+    }
+
+    @supports (backdrop-filter: blur(1rem)){
+        .navbar__org{
+            backdrop-filter: blur(1rem);
+            background:rgba(211, 211, 211, 0.068);
+    }
+    .navbar__itens{
+        
+        font-size: 2.5vh;
+        
+    }
+}
+    
+}
+
+main{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    
+}
+h4{
+ color: var(--color-primary);
+ text-transform: uppercase;
+letter-spacing: 5px;
+}
+.about{
+    background: red;
+    position: relative;
+    width: 100%;
+    display: none;
+    object-fit: cover;
+    
+}
+
+
+.team{
+    display: none;
+}
+.resource{
+    display:none;
 }
